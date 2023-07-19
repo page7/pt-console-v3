@@ -36,19 +36,19 @@ $base = 'D:/www/console/';
 
 // 从项目
 $subs = array(
-    'be'            => 'D:/www/be/',
+    //'be'            => 'D:/www/be/',
     //'jianshen'      => 'D:/www/jianshen/',
     //'latte'         => 'D:/www/_backup/latte/',
     //'latte2'        => 'D:/www/_backup/latte2/',
     //'weding'        => 'D:/www/weding/',
-    '7yzz'          => 'D:/www/7yzz/',
+    //'7yzz'          => 'D:/www/7yzz/',
     'pt-console'    => 'D:/www/github/pt-console/',
     //'hzroom'        => 'D:/www/putike_temp/zj/hzroom/',
     //'cosco'         => 'D:/www/_backup/cosco/',
-    '66map'         => 'D:/www/66map/',
-    'pinka'         => 'D:/www/gitee/pinka/',
-    'schoolexpo'    => 'D:/www/gitee/schoolexpo/',
-    'schoolsguide'  => 'D:/www/gitee/schoolsguide/',
+    //'66map'         => 'D:/www/66map/',
+    //'pinka'         => 'D:/www/gitee/pinka/',
+    //'schoolexpo'    => 'D:/www/gitee/schoolexpo/',
+    //'schoolsguide'  => 'D:/www/gitee/schoolsguide/',
 );
 
 $logfile = './log/syn_err_'.time().'.log';

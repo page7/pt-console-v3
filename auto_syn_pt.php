@@ -6,9 +6,14 @@ error_reporting(E_ALL);
 
 // 待更新文件目录
 $files = array(
+    '/class/pt/framework/base.class.php',
+    '/class/pt/framework/language.class.php',
+    '/class/pt/framework/db/pdo.class.php',
+    '/class/pt/tool/file.class.php',
+    '/class/pt/tool/str.class.php',
+    '/class/pt/tool/string.class.php',
     '/common.php',
     '/common/pt/functions.php',
-    '/class/pt/framework/language.class.php'
 );
 
 
@@ -17,7 +22,7 @@ $base = 'D:/www/console/';
 
 // 从项目
 $subs = array(
-    'be'            => 'D:/www/be/',
+    //'be'            => 'D:/www/be/',
     //'jianshen'      => 'D:/www/jianshen/',
     //'latte'         => 'D:/www/latte/',
     //'latte2'        => 'D:/www/latte2/',
@@ -26,10 +31,11 @@ $subs = array(
     //'hangyun'       => 'D:/www/hangyun/',
     'pt'            => 'D:/www/github/pt/',
     'pt-console'    => 'D:/www/github/pt-console/',
-    '7yzz'          => 'D:/www/7yzz/',
-    'be'            => 'D:/www/be/',
-    'pinka'         => 'D:/www/pinka/',
-    '66map'         => 'D:/www/66map/'
+    //'7yzz'          => 'D:/www/7yzz/',
+    //'be'            => 'D:/www/be/',
+    //'pinka'         => 'D:/www/pinka/',
+    //'66map'         => 'D:/www/66map/',
+    'demo'          => 'D:/www/demo/'
 );
 
 $logfile = './log/syn_err_'.time().'.log';
@@ -40,16 +46,23 @@ $ftime = array();
 
 foreach ($files as $fi)
 {
-    $ca = file_get_contents($base . $fi);
-    if (!$ca)
+    if (file_exists($base . $fi))
     {
-        echo $log = "BASEFILE LOAD FAIL:{$fi}.\r\n";
-        file_put_contents($logfile, $log, FILE_APPEND);
-        continue;
-    }
+        $ca = file_get_contents($base . $fi);
+        if (!$ca)
+        {
+            echo $log = "BASEFILE LOAD FAIL:{$fi}.\r\n";
+            file_put_contents($logfile, $log, FILE_APPEND);
+            continue;
+        }
 
-    $cache[$fi] = $ca;
-    $ftime[$fi] = filemtime($base . $fi);
+        $cache[$fi] = $ca;
+        $ftime[$fi] = filemtime($base . $fi);
+    }
+    else
+    {
+        $cache[$fi] = false;
+    }
 }
 
 // 遍历从项目
@@ -58,13 +71,25 @@ foreach ($subs as $k => $sub)
     // 遍历文件
     foreach ($cache as $fi => $con)
     {
-        if (!file_exists(dirname($sub . $fi))) continue;
-
-        $t = filemtime($sub . $fi);
-        if ($t >= $ftime[$fi])
+        if (!$con)
         {
-            echo $log = "! SKIP: {$k}/{$fi}, NEW {$ftime[$fi]} OLD {$t}.\r\n";
+            unlink($sub . $fi);
+            echo $log = "√ FILE REMOVE: {$k}/{$fi} SUCCESS.\r\n";
             continue;
+        }
+
+        if (!file_exists(dirname($sub . $fi)))
+        {
+            $rs = file_put_contents($sub . $fi, $con);
+        }
+        else
+        {
+            $t = filemtime($sub . $fi);
+            if ($t >= $ftime[$fi])
+            {
+                echo $log = "! SKIP: {$k}/{$fi}, NEW {$ftime[$fi]} OLD {$t}.\r\n";
+                continue;
+            }
         }
 
 
