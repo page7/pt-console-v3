@@ -1,0 +1,22 @@
+div.colorPicker-palette {
+	position:absolute;
+	z-index: 1000;
+	font-size: 0;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.15);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	outline: none;
+	margin: 0;
+	margin-bottom: -6px;
+	padding: 10px;
+	width: 180px;
+	border-radius: 4px;
+	overflow:hidden;
+	box-sizing:border-box;
+	text-align:center;
+ }
+div.colorPicker-palette > a { width:20px; height:20px; box-sizing:border-box; border:1px solid #999; margin:3px; display:inline-block; cursor:pointer; border-radius:2px; }
+div.colorPicker-palette > a:hover { border:1px solid #fff; box-shadow:0 0 50px 20px rgba(255,255,255,0.9); transform:scale(2); }
+div.colorPicker-palette > p { width:100%; margin:5px 0 0; }
+div.colorPicker-palette > p > label { font-size:14px; color:#333; margin:5px 2px; width:25%; display:inline-block; }
+div.colorPicker-palette > p > input { margin:5px 2px; padding:0; font-size:14px; color:#666; border:0; border-bottom:#e0e0e0 solid 2px; width:65%; }

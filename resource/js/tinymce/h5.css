@@ -1,0 +1,14 @@
+html { background:#fff; }
+body { font-size:14px; font-family:"Microsoft Yahei"; max-width:600px; color:#333; padding:10px 20px; margin:0px auto; }
+body img { max-width:100%!important; height:auto!important; box-sizing:border-box; }
+
+body * {
+    max-width: 100%!important;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    box-sizing: border-box!important;
+    -webkit-box-sizing: border-box!important;
+    word-wrap: break-word!important;
+}
