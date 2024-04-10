@@ -42,7 +42,7 @@ function pt_autoload($classname)
  +-----------------------------------------
  * @param mix $name
  * @param mix $value
- * @return void
+ * @return string|array
  */
 function config($name='', $value=null)
 {
