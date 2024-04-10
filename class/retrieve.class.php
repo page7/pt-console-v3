@@ -1,5 +1,6 @@
 <?php
 
+use \pt\framework\db as db;
 
 // 数据回收站
 class retrieve

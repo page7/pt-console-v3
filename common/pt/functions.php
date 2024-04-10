@@ -262,7 +262,8 @@ function import($path, $ext='.class.php')
  */
 function __($key, $package=null)
 {
-    return translate($key, $package);
+    \pt\framework\filter::add('translate', 'translate', 0, 2);
+    return \pt\framework\filter::apply('translate', $key, $package);
 }
 
 

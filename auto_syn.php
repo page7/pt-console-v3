@@ -6,20 +6,21 @@ error_reporting(E_ALL);
 
 // 待更新文件目录
 $files = array(
-//    '/common.php',
-//    '/common/pt/functions.php',
     '/class/console.class.php',
+    '/class/retrieve.class.php',
     '/class/console/plugin.class.php',
+
+    '/common/console.func.php',
     '/common/console/_page.tpl.php',
     '/common/console/form.tpl.php',
     '/common/console/modal.tpl.php',
     '/common/console/table.tpl.php',
+
     '/resource/css/console.css',
     '/resource/css/calendar.css',
-/*
-    '/resource/css/console-login.css',
-    '/resource/css/theme.css',
-*/
+    // '/resource/css/console-login.css',
+    // '/resource/css/theme.css',  // 具有特殊性，不应整体覆盖
+
     '/resource/js/console.js',
     '/resource/js/console.zh_CN.js',
     '/resource/js/console.en.js',
@@ -32,23 +33,12 @@ $files = array(
 
 
 // 主项目
-$base = 'D:/www/console/';
+$base = 'D:/www/console';
 
 // 从项目
 $subs = array(
-    //'be'            => 'D:/www/be/',
-    //'jianshen'      => 'D:/www/jianshen/',
-    //'latte'         => 'D:/www/_backup/latte/',
-    //'latte2'        => 'D:/www/_backup/latte2/',
-    //'weding'        => 'D:/www/weding/',
-    //'7yzz'          => 'D:/www/7yzz/',
-    'pt-console'    => 'D:/www/github/pt-console/',
-    //'hzroom'        => 'D:/www/putike_temp/zj/hzroom/',
-    //'cosco'         => 'D:/www/_backup/cosco/',
-    //'66map'         => 'D:/www/66map/',
-    //'pinka'         => 'D:/www/gitee/pinka/',
-    //'schoolexpo'    => 'D:/www/gitee/schoolexpo/',
-    //'schoolsguide'  => 'D:/www/gitee/schoolsguide/',
+    'pt-console'    => 'D:/www/github/pt-console',
+    'pt-console-gitee'    => 'D:/www/gitee/pt-console',
 );
 
 $logfile = './log/syn_err_'.time().'.log';
